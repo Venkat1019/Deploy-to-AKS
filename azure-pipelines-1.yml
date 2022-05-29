@@ -27,3 +27,11 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
         tags: |
           $(tag)
+- stage: DEPLOY
+  jobs: 
+  - job: deploy
+    pool: 
+      vmimage: ubuntu-latest
+      
+    steps:
+      - 
